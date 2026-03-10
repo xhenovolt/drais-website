@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" className="w-full h-full">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#bg)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="60" fill="#1e40af"/>
+  <rect x="20" y="20" width="120" height="20" fill="white" rx="10"/>
+  <text x="150" y="35" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Student Management System</text>
+  
+  <!-- Student Profile Cards -->
+  <g transform="translate(40, 100)">
+    <rect width="340" height="400" fill="white" rx="8" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">Student Profiles</text>
+    
+    <!-- Student 1 -->
+    <g transform="translate(20, 50)">
+      <circle cx="25" cy="25" r="20" fill="#3b82f6"/>
+      <text x="25" y="31" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">AH</text>
+      <text x="55" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#374151">Abdullah Hassan</text>
+      <text x="55" y="35" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Class 5A • Student ID: 1245</text>
+      <text x="250" y="20" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ Present</text>
+      <text x="250" y="35" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Arrived: 07:42 AM</text>
+    </g>
+    
+    <!-- Student 2 -->
+    <g transform="translate(20, 100)">
+      <circle cx="25" cy="25" r="20" fill="#8b5cf6"/>
+      <text x="25" y="31" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">FA</text>
+      <text x="55" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#374151">Fatima Al-Rashid</text>
+      <text x="55" y="35" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Class 4B • Student ID: 1367</text>
+      <text x="250" y="20" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ Present</text>
+      <text x="250" y="35" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Arrived: 07:58 AM</text>
+    </g>
+    
+    <!-- Student 3 -->
+    <g transform="translate(20, 150)">
+      <circle cx="25" cy="25" r="20" fill="#f59e0b"/>
+      <text x="25" y="31" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">IM</text>
+      <text x="55" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#374151">Ibrahim Musa</text>
+      <text x="55" y="35" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Class 6A • Student ID: 1089</text>
+      <text x="250" y="20" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b">⚠ Late</text>
+      <text x="250" y="35" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Arrived: 08:17 AM</text>
+    </g>
+    
+    <!-- Student 4 -->
+    <g transform="translate(20, 200)">
+      <circle cx="25" cy="25" r="20" fill="#ef4444"/>
+      <text x="25" y="31" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">ZK</text>
+      <text x="55" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#374151">Zainab Kiprotich</text>
+      <text x="55" y="35" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Class 3C • Student ID: 1156</text>
+      <text x="250" y="20" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">✗ Absent</text>
+      <text x="250" y="35" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Parent notified: 09:00 AM</text>
+    </g>
+    
+    <!-- Quick Stats -->
+    <g transform="translate(20, 280)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#374151">Quick Actions</text>
+      <rect x="0" y="30" width="80" height="25" fill="#3b82f6" rx="4"/>
+      <text x="40" y="46" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Add Student</text>
+      
+      <rect x="90" y="30" width="80" height="25" fill="#10b981" rx="4"/>
+      <text x="130" y="46" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Export List</text>
+      
+      <rect x="180" y="30" width="80" height="25" fill="#f59e0b" rx="4"/>
+      <text x="220" y="46" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Send SMS</text>
+    </g>
+  </g>
+  
+  <!-- Enrollment Statistics -->
+  <g transform="translate(420, 100)">
+    <rect width="340" height="200" fill="white" rx="8" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">Enrollment Overview</text>
+    
+    <!-- Class breakdown -->
+    <g transform="translate(20, 50)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="11" fill="#374151">Total Students: 354</text>
+      
+      <!-- Class bars -->
+      <rect x="0" y="35" width="120" height="15" fill="#ddd6fe" rx="2"/>
+      <rect x="0" y="35" width="90" height="15" fill="#8b5cf6" rx="2"/>
+      <text x="130" y="46" font-family="Arial, sans-serif" font-size="10" fill="#374151">Nursery: 67</text>
+      
+      <rect x="0" y="60" width="120" height="15" fill="#bfdbfe" rx="2"/>
+      <rect x="0" y="60" width="110" height="15" fill="#3b82f6" rx="2"/>
+      <text x="130" y="71" font-family="Arial, sans-serif" font-size="10" fill="#374151">Primary: 189</text>
+      
+      <rect x="0" y="85" width="120" height="15" fill="#d1fae5" rx="2"/>
+      <rect x="0" y="85" width="70" height="15" fill="#10b981" rx="2"/>
+      <text x="130" y="96" font-family="Arial, sans-serif" font-size="10" fill="#374151">Secondary: 98</text>
+    </g>
+  </g>
+  
+  <!-- Parent Portal Access -->
+  <g transform="translate(420, 320)">
+    <rect width="340" height="180" fill="white" rx="8" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">Parent Portal Activity</text>
+    
+    <g transform="translate(20, 50)">
+      <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#6b7280">Recent Logins</text>
+      <text x="0" y="35" font-family="Arial, sans-serif" font-size="9" fill="#374151">Mrs. Hassan (Abdullah's mother) - 2 min ago</text>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="9" fill="#374151">Mr. Al-Rashid (Fatima's father) - 5 min ago</text>
+      <text x="0" y="65" font-family="Arial, sans-serif" font-size="9" fill="#374151">Mrs. Kiprotich (Zainab's guardian) - 1 hour ago</text>
+      
+      <text x="0" y="95" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#6b7280">Desktop & Mobile Access</text>
+      <rect x="0" y="105" width="200" height="4" fill="#e5e7eb" rx="2"/>
+      <rect x="0" y="105" width="160" height="4" fill="#3b82f6" rx="2"/>
+      <text x="0" y="125" font-family="Arial, sans-serif" font-size="9" fill="#6b7280">80% mobile • 20% desktop usage</text>
+    </g>
+  </g>
+</svg>
