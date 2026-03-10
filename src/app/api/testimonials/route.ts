@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     school: "Northgate Schools",
     message:
       "DRAIS has completely transformed our attendance monitoring. The fingerprint system is incredibly fast and reliable. Our parents now have full confidence in our accountability systems because they receive real-time notifications when their children arrive or are absent.",
-    photo_url: null,
+    photo_url: "/testimonial_photos/ngobi-peter.svg",
     created_at: new Date().toISOString(),
   },
   {
@@ -19,7 +19,7 @@ const TESTIMONIALS = [
     school: "Albayan Quran Memorization Center",
     message:
       "As an Islamic school focused on Quran memorization, we needed a system that understood our unique needs. DRAIS not only handles our attendance perfectly but also helps us track our students' Quranic studies progress with specialized tools designed for Islamic education.",
-    photo_url: null,
+    photo_url: "/testimonial_photos/wagogo-husama.svg",
     created_at: new Date().toISOString(),
   },
   {
@@ -29,7 +29,7 @@ const TESTIMONIALS = [
     school: "Excel Islamic Nursery and Primary School",
     message:
       "The setup process was remarkably straightforward, and the training was excellent. Our teachers adapted to DRAIS within days. The automated parent notifications have significantly improved our parent-school communication and trust levels.",
-    photo_url: null,
+    photo_url: "/testimonial_photos/hassan-mwaita.svg",
     created_at: new Date().toISOString(),
   },
   {
@@ -39,7 +39,7 @@ const TESTIMONIALS = [
     school: "Ibun Baz Educational Complex",
     message:
       "Managing attendance for over 400 students was a nightmare before DRAIS. Now, our morning routine is smooth and efficient. The detailed attendance reports save us hours every month, and parents love receiving instant arrival confirmations.",
-    photo_url: null,
+    photo_url: "/testimonial_photos/mwondha-hassan.svg",
     created_at: new Date().toISOString(),
   },
 ];

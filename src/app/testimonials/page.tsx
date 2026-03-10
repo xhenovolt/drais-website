@@ -23,6 +23,7 @@ const SEED_TESTIMONIALS: Testimonial[] = [
     school: "Northgate Schools",
     message:
       "DRAIS has completely transformed our attendance monitoring. The fingerprint system is incredibly fast and reliable. Our parents now have full confidence in our accountability systems because they receive real-time notifications when their children arrive or are absent.",
+    photo_url: "/testimonial_photos/ngobi-peter.svg",
     created_at: new Date().toISOString(),
   },
   {
@@ -32,6 +33,7 @@ const SEED_TESTIMONIALS: Testimonial[] = [
     school: "Albayan Quran Memorization Center",
     message:
       "As an Islamic school focused on Quran memorization, we needed a system that understood our unique needs. DRAIS not only handles our attendance perfectly but also helps us track our students' Quranic studies progress with specialized tools designed for Islamic education.",
+    photo_url: "/testimonial_photos/wagogo-husama.svg",
     created_at: new Date().toISOString(),
   },
   {
@@ -41,6 +43,7 @@ const SEED_TESTIMONIALS: Testimonial[] = [
     school: "Excel Islamic Nursery and Primary School",
     message:
       "The setup process was remarkably straightforward, and the training was excellent. Our teachers adapted to DRAIS within days. The automated parent notifications have significantly improved our parent-school communication and trust levels.",
+    photo_url: "/testimonial_photos/hassan-mwaita.svg",
     created_at: new Date().toISOString(),
   },
   {
@@ -50,6 +53,7 @@ const SEED_TESTIMONIALS: Testimonial[] = [
     school: "Ibun Baz Educational Complex",
     message:
       "Managing attendance for over 400 students was a nightmare before DRAIS. Now, our morning routine is smooth and efficient. The detailed attendance reports save us hours every month, and parents love receiving instant arrival confirmations.",
+    photo_url: "/testimonial_photos/mwondha-hassan.svg",
     created_at: new Date().toISOString(),
   },
 ];
@@ -113,8 +117,18 @@ export default function TestimonialsPage() {
                     &ldquo;{t.message}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center shrink-0">
-                      <UserCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center shrink-0">
+                      {t.photo_url ? (
+                        <img
+                          src={t.photo_url}
+                          alt={t.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="text-indigo-600 dark:text-indigo-400 font-bold text-lg">
+                          {t.name.split(' ').map(word => word[0]).join('')}
+                        </div>
+                      )}
                     </div>
                     <div>
                       <p className="text-sm font-bold text-gray-900 dark:text-white">{t.name}</p>

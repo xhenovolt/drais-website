@@ -22,6 +22,9 @@ import {
   UserCheck,
 } from "lucide-react";
 import PublicLayout from "@/components/public/PublicLayout";
+import MicroDemoCarousel from "@/components/landing/MicroDemoCarousel";
+import ClientLogosSection from "@/components/landing/ClientLogosSection";
+import EnhancedTestimonialsSection from "@/components/landing/EnhancedTestimonialsSection";
 
 // ─── 1. HERO ──────────────────────────────────────────────────────────────────
 function HeroSection() {
@@ -50,7 +53,7 @@ function HeroSection() {
 
         {/* Sub-headline */}
         <p className="text-xl sm:text-2xl text-blue-100/80 font-light max-w-2xl mx-auto mb-10">
-          Fingerprint-powered attendance monitoring and school management system built for modern schools.
+          Fingerprint-powered attendance monitoring and school management system. Trusted by 30+ East African schools serving 8,500+ students daily.
         </p>
 
         {/* CTAs */}
@@ -67,7 +70,14 @@ function HeroSection() {
             className="flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 hover:border-white/30 transition-all duration-200 hover:-translate-y-0.5 backdrop-blur-sm text-lg"
           >
             <Play className="w-5 h-5" />
-            Watch Attendance Demo
+            Watch System Demo
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center gap-2 px-6 py-3 text-indigo-300 hover:text-white font-semibold transition-colors text-base"
+          >
+            <MessageSquare className="w-4 h-4" />
+            Book Live Demo
           </Link>
         </div>
 
@@ -590,13 +600,15 @@ export default function HomePage() {
   return (
     <PublicLayout>
       <HeroSection />
+      <ClientLogosSection />
+      <MicroDemoCarousel />
       <ProblemSection />
       <AttendanceBreakthroughSection />
       <FeaturesSection />
       <HowItWorksSection />
       <SocialProofBanner />
       <TrustSection />
-      <TestimonialsSection />
+      <EnhancedTestimonialsSection />
       <FinalCTASection />
     </PublicLayout>
   );
