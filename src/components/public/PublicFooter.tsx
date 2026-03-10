@@ -40,7 +40,7 @@ export default function PublicFooter() {
             <p className="text-sm leading-relaxed text-gray-500 mb-1 max-w-xs">
               Fingerprint-powered school attendance and management system built for modern African schools.
             </p>
-            <p className="text-xs text-indigo-400/70 mb-4">A product of <span className="font-semibold text-indigo-400">Xhenvolt</span></p>
+            <p className="text-xs text-indigo-400/70 mb-4">A product of <a href="https://xhenvolt.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">Xhenvolt</a></p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-indigo-400 shrink-0" />
@@ -97,7 +97,7 @@ export default function PublicFooter() {
 
         {/* Bottom bar */}
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
-          <p>© {new Date().getFullYear()} DRAIS School Management System — A product of Xhenvolt. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} DRAIS School Management System — A product of <a href="https://xhenvolt.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-400 transition-colors">Xhenvolt</a>. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-gray-400 transition-colors">Terms of Service</Link>

@@ -46,19 +46,25 @@ export default function ContactPage() {
 
               <div className="space-y-5">
                 {[
-                  { icon: Mail, label: "Email", value: "drais@xhenvolt.com", note: "General enquiries and support" },
+                  { icon: Mail, label: "Email", value: "drais@xhenvolt.com", note: "General enquiries and support", link: "mailto:drais@xhenvolt.com" },
                   { icon: Phone, label: "Phone / WhatsApp", value: "0741 341 483", note: "Available Mon–Sat, 8am–6pm EAT" },
                   { icon: Phone, label: "Phone / WhatsApp", value: "0760 700 954", note: "Sales and demo scheduling" },
                   { icon: Phone, label: "Phone / WhatsApp", value: "0745 726 350", note: "Technical support" },
                   { icon: MessageSquare, label: "Live Demo Request", value: "Use the form →", note: "We will schedule a screen share demo for your school" },
-                ].map(({ icon: Icon, label, value, note }) => (
+                ].map(({ icon: Icon, label, value, note, link }) => (
                   <div key={label} className="flex gap-4">
                     <div className="w-11 h-11 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-gray-900 dark:text-white">{label}</p>
-                      <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">{value}</p>
+                      {link ? (
+                        <a href={link} className="text-sm text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-500 transition-colors">
+                          {value}
+                        </a>
+                      ) : (
+                        <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">{value}</p>
+                      )}
                       <p className="text-xs text-gray-500 dark:text-gray-500">{note}</p>
                     </div>
                   </div>
