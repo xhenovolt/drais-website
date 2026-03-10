@@ -20,8 +20,8 @@ const testimonials = [
     name: "Mwondha Hassan",
     position: "Head Teacher",
     school: "Hillside Ways Nursery and Primary School",
-    students: "180+ students",
-    message: "As a growing primary school, we needed an attendance system that could scale with us. DRAIS has exceeded our expectations with its ease of use and reliable reporting features.",
+    students: "800+ students",
+    message: "With over 800 students, manual attendance was becoming absolutely hectic and error-prone. DRAIS was not just an option for us - it became a necessity. Now our teachers can focus on teaching instead of spending valuable time on attendance paperwork.",
     photo: "/testimonial_photos/mwondha-hassan.svg",
     rating: 5
   },
