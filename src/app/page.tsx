@@ -25,6 +25,7 @@ import PublicLayout from "@/components/public/PublicLayout";
 import MicroDemoCarousel from "@/components/landing/MicroDemoCarousel";
 import ClientLogosSection from "@/components/landing/ClientLogosSection";
 import EnhancedTestimonialsSection from "@/components/landing/EnhancedTestimonialsSection";
+import ObjectionCrusherSection from "@/components/landing/ObjectionCrusherSection";
 
 // ─── 1. HERO ──────────────────────────────────────────────────────────────────
 function HeroSection() {
@@ -608,6 +609,7 @@ export default function HomePage() {
       <HowItWorksSection />
       <SocialProofBanner />
       <TrustSection />
+      <ObjectionCrusherSection />
       <EnhancedTestimonialsSection />
       <FinalCTASection />
     </PublicLayout>

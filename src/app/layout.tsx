@@ -17,6 +17,11 @@ const routeTitles: Record<string, string> = {
   '/testimonials': 'Testimonials - DRAIS',
   '/login': 'Sign In - DRAIS',
   '/signup': 'Free Trial - DRAIS',
+  '/reliability': 'Reliability - DRAIS',
+  '/security': 'Security - DRAIS',
+  '/device-integration': 'Device Integration - DRAIS',
+  '/training': 'Training - DRAIS',
+  '/support': 'Support - DRAIS',
 };
 
 function getPageTitle(pathname: string): string {
