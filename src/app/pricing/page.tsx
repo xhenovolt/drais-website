@@ -6,62 +6,62 @@ import PublicLayout from "@/components/public/PublicLayout";
 
 const plans = [
   {
-    name: "Starter",
-    tagline: "Perfect for small schools getting started",
-    price: "Contact us",
-    priceNote: "for pricing",
+    name: "Professional",
+    tagline: "Ideal for small to medium schools getting started",
+    installFee: "1,000,000",
+    annualFee: "200,000",
     highlight: false,
     badge: null,
     features: [
-      "Up to 200 students",
-      "Fingerprint attendance (1 device)",
-      "Daily attendance reports",
-      "Parent SMS notifications",
+      "Fingerprint attendance system",
+      "Real-time parent SMS alerts",
       "Student information system",
-      "Class management",
-      "Email support",
+      "Up to 500 students",
+      "Daily attendance reports",
+      "Basic reporting & dashboards",
+      "Email & phone support",
     ],
-    cta: "Start Free Trial",
-    ctaHref: "/signup",
+    cta: "Get Started",
+    ctaHref: "/contact",
   },
   {
-    name: "Growth",
-    tagline: "Complete school management for growing schools",
-    price: "Contact us",
-    priceNote: "for pricing",
+    name: "Premium",
+    tagline: "Complete school management for growing institutions",
+    installFee: "1,800,000",
+    annualFee: "350,000",
     highlight: true,
     badge: "Most Popular",
     features: [
-      "Up to 800 students",
-      "Fingerprint attendance (up to 3 devices)",
-      "Full exam and report card system",
-      "Advanced analytics and dashboards",
+      "Everything in Professional",
+      "Full exam & report card system",
+      "Advanced analytics & dashboards",
+      "Up to 2,000 students",
+      "Mobile app access",
       "Parent communication portal",
-      "Teacher management",
       "SMS broadcast messaging",
       "Priority support",
     ],
-    cta: "Start Free Trial",
-    ctaHref: "/signup",
+    cta: "Get Started",
+    ctaHref: "/contact",
   },
   {
-    name: "Enterprise",
-    tagline: "For large schools and multi-campus institutions",
-    price: "Custom pricing",
-    priceNote: "talk to us",
+    name: "Gold",
+    tagline: "Enterprise-grade for large schools & multi-campus",
+    installFee: "2,500,000",
+    annualFee: "500,000",
     highlight: false,
     badge: null,
     features: [
+      "Everything in Premium",
       "Unlimited students",
-      "Unlimited fingerprint devices",
       "Multi-campus support",
       "Custom integrations",
       "Dedicated account manager",
       "On-site setup assistance",
       "Custom reporting",
-      "24/7 support SLA",
+      "24/7 dedicated support",
     ],
-    cta: "Contact Sales",
+    cta: "Get Started",
     ctaHref: "/contact",
   },
 ];
@@ -112,7 +112,7 @@ export default function PricingPage() {
       <section className="py-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-6">
-            {plans.map(({ name, tagline, price, priceNote, highlight, badge, features, cta, ctaHref }) => (
+            {plans.map(({ name, tagline, installFee, annualFee, highlight, badge, features, cta, ctaHref }) => (
               <div
                 key={name}
                 className={`rounded-2xl p-8 border relative transition-all duration-200 hover:-translate-y-1 hover:shadow-xl ${
@@ -136,15 +136,29 @@ export default function PricingPage() {
                   </p>
                 </div>
 
-                <div className="mb-8">
-                  <span className={`text-3xl font-extrabold ${highlight ? "text-white" : "text-gray-900 dark:text-white"}`}>
-                    {price}
-                  </span>
-                  {priceNote && (
-                    <span className={`text-sm ml-2 ${highlight ? "text-indigo-200" : "text-gray-500 dark:text-gray-400"}`}>
-                      {priceNote}
+                {/* Pricing */}
+                <div className="mb-8 space-y-3">
+                  <div>
+                    <span className={`text-xs font-semibold uppercase tracking-wider ${highlight ? "text-indigo-200" : "text-gray-500 dark:text-gray-400"}`}>
+                      Installation Fee (one-time)
                     </span>
-                  )}
+                    <div className={`text-3xl font-extrabold ${highlight ? "text-white" : "text-gray-900 dark:text-white"}`}>
+                      UGX {installFee}
+                    </div>
+                  </div>
+                  <div className={`pt-3 border-t ${highlight ? "border-indigo-400/40" : "border-gray-200 dark:border-gray-600"}`}>
+                    <span className={`text-xs font-semibold uppercase tracking-wider ${highlight ? "text-indigo-200" : "text-gray-500 dark:text-gray-400"}`}>
+                      Annual Subscription
+                    </span>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className={`text-2xl font-extrabold ${highlight ? "text-emerald-300" : "text-emerald-600 dark:text-emerald-400"}`}>
+                        UGX {annualFee}
+                      </span>
+                      <span className={`text-sm ${highlight ? "text-indigo-200" : "text-gray-500 dark:text-gray-400"}`}>
+                        / year
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -171,7 +185,7 @@ export default function PricingPage() {
           </div>
 
           <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-8">
-            All prices are quoted per school. Contact us for exact pricing based on your school size and requirements.
+            All prices are in Ugandan Shillings (UGX). Installation fee is a one-time payment. Annual subscription renews yearly.
           </p>
         </div>
       </section>
@@ -187,13 +201,13 @@ export default function PricingPage() {
             Fingerprint Attendance Is Always Included
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg mb-10">
-            Regardless of plan, every DRAIS school gets: biometric attendance, real-time dashboard, parent notifications, and attendance reports. The plans differ in school size, number of devices, and additional management modules.
+            Regardless of plan, every DRAIS school gets: biometric attendance, real-time dashboard, parent notifications, and attendance reports. Plans differ in school size, features, and support level.
           </p>
           <Link
-            href="/signup"
+            href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-colors shadow-lg"
           >
-            Start Free Trial <ArrowRight className="w-5 h-5" />
+            Get Started <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </section>

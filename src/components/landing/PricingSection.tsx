@@ -1,70 +1,62 @@
 "use client";
 import { motion } from 'framer-motion';
-import { useI18n } from '@/components/i18n/I18nProvider';
 import { Check, Sparkles, Zap, Crown, ArrowRight } from 'lucide-react';
 
 export const PricingSection = () => {
-  const { t } = useI18n();
-
   const plans = [
     {
-      name: t('landing.pricing.professional_title'),
-      setup: t('landing.pricing.professional_setup'),
-      monthly: t('landing.pricing.professional_monthly'),
-      annual: t('landing.pricing.professional_annual'),
-      desc: t('landing.pricing.professional_desc'),
+      name: 'Professional',
+      setup: '1,000,000',
+      annual: '200,000',
+      desc: 'Ideal for small to medium schools getting started with biometric attendance.',
       icon: Sparkles,
       color: 'blue',
       gradient: 'from-blue-500 to-cyan-500',
       features: [
-        t('landing.pricing.feature1'),
-        t('landing.pricing.feature2'),
-        t('landing.pricing.feature3'),
+        'Fingerprint attendance system',
+        'Real-time parent SMS alerts',
+        'Student information system',
         'Up to 500 students',
-        'Basic reporting',
-        'Email support'
+        'Basic reporting & dashboards',
+        'Email & phone support'
       ]
     },
     {
-      name: t('landing.pricing.premium_title'),
-      setup: t('landing.pricing.premium_setup'),
-      monthly: t('landing.pricing.premium_monthly'),
-      annual: t('landing.pricing.premium_annual'),
-      desc: t('landing.pricing.premium_desc'),
+      name: 'Premium',
+      setup: '1,800,000',
+      annual: '350,000',
+      desc: 'Complete school management for growing institutions that need more power.',
       icon: Zap,
       color: 'indigo',
       gradient: 'from-indigo-500 to-purple-500',
       popular: true,
       features: [
-        t('landing.pricing.feature1'),
-        t('landing.pricing.feature2'),
-        t('landing.pricing.feature3'),
-        t('landing.pricing.feature4'),
+        'Everything in Professional',
+        'Full exam & report card system',
+        'Advanced analytics & dashboards',
         'Up to 2,000 students',
-        'Advanced analytics',
+        'Mobile app access',
         'Priority support',
-        'Mobile app access'
+        'SMS broadcast messaging',
+        'Parent communication portal'
       ]
     },
     {
-      name: t('landing.pricing.gold_title'),
-      setup: t('landing.pricing.gold_setup'),
-      monthly: t('landing.pricing.gold_monthly'),
-      annual: t('landing.pricing.gold_annual'),
-      desc: t('landing.pricing.gold_desc'),
+      name: 'Gold',
+      setup: '2,500,000',
+      annual: '500,000',
+      desc: 'Enterprise-grade solution for large schools and multi-campus institutions.',
       icon: Crown,
       color: 'amber',
       gradient: 'from-amber-500 to-orange-500',
       features: [
-        t('landing.pricing.feature1'),
-        t('landing.pricing.feature2'),
-        t('landing.pricing.feature3'),
-        t('landing.pricing.feature4'),
-        t('landing.pricing.feature5'),
-        t('landing.pricing.feature6'),
+        'Everything in Premium',
         'Unlimited students',
         'Multi-campus support',
         'Custom integrations',
+        'Dedicated account manager',
+        'On-site setup assistance',
+        'Custom reporting',
         '24/7 dedicated support'
       ]
     }
@@ -88,10 +80,10 @@ export const PricingSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-            {t('landing.pricing.title')}
+            Simple, Transparent Pricing
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-4">
-            {t('landing.pricing.subtitle')}
+            Choose the plan that fits your school. One-time installation fee + affordable annual subscription.
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-500">
             All prices in Ugandan Shillings (UGX)
@@ -143,33 +135,23 @@ export const PricingSection = () => {
 
                 {/* Pricing */}
                 <div className="mb-6 p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50">
-                  {/* Setup Fee */}
+                  {/* Installation Fee */}
                   <div className="mb-4">
                     <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                      {t('landing.pricing.setup_label')}
+                      Installation Fee (one-time)
                     </div>
                     <div className={`text-4xl font-extrabold bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent`}>
-                      {t('landing.pricing.currency')} {plan.setup}
+                      UGX {plan.setup}
                     </div>
                   </div>
 
-                  {/* Monthly */}
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-2xl font-bold text-gray-900 dark:text-white">
-                      {t('landing.pricing.currency')} {plan.monthly}
-                    </span>
-                    <span className="text-gray-500 dark:text-gray-400">
-                      {t('landing.pricing.monthly_label')}
-                    </span>
-                  </div>
-
-                  {/* Annual */}
+                  {/* Annual Subscription */}
                   <div className="flex items-baseline gap-2">
-                    <span className="text-lg font-semibold text-emerald-600 dark:text-emerald-400">
-                      {t('landing.pricing.currency')} {plan.annual}
+                    <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+                      UGX {plan.annual}
                     </span>
                     <span className="text-sm text-emerald-600 dark:text-emerald-400">
-                      {t('landing.pricing.annual_label')}
+                      / year
                     </span>
                   </div>
                 </div>
@@ -195,7 +177,7 @@ export const PricingSection = () => {
                       : 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100'
                     }
                   `}>
-                    {plan.popular ? t('landing.pricing.cta') : t('landing.pricing.contact_cta')}
+                    {plan.popular ? 'Get Started' : 'Contact Us'}
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </a>
