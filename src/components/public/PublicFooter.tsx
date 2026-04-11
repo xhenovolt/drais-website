@@ -5,16 +5,17 @@ import { Fingerprint, Mail, Phone, MapPin } from "lucide-react";
 const footerLinks = {
   Product: [
     { label: "Features", href: "/features" },
-    { label: "Attendance Demo", href: "/attendance-demo" },
+    { label: "Attendance System", href: "/attendance" },
     { label: "Pricing", href: "/pricing" },
     { label: "Screenshots", href: "/screenshots" },
+    { label: "Watch Demo", href: "/demo" },
   ],
-  Documentation: [
+  Resources: [
+    { label: "Documentation", href: "/documentation" },
     { label: "Getting Started", href: "/documentation/getting-started" },
-    { label: "Taking Attendance", href: "/documentation/attendance" },
-    { label: "Admitting Students", href: "/documentation/admitting-students" },
-    { label: "Exam Management", href: "/documentation/exams" },
-    { label: "Generating Reports", href: "/documentation/reports" },
+    { label: "Device Integration", href: "/device-integration" },
+    { label: "Training", href: "/training" },
+    { label: "Support", href: "/support" },
   ],
   Company: [
     { label: "About DRAIS", href: "/about" },
@@ -88,7 +89,7 @@ export default function PublicFooter() {
             <p className="text-indigo-300 text-sm">Start your free trial — no credit card required.</p>
           </div>
           <Link
-            href="/signup"
+            href="https://sims.drais.pro"
             className="shrink-0 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-indigo-500/20"
           >
             Create Free Account
@@ -97,11 +98,8 @@ export default function PublicFooter() {
 
         {/* Bottom bar */}
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
-          <p>© {new Date().getFullYear()} DRAIS School Management System — A product of <a href="https://xhenvolt.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-400 transition-colors">Xhenvolt</a>. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="#" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-gray-400 transition-colors">Terms of Service</Link>
-          </div>
+          <p>Designed with <span className="text-red-500">♥</span> by <a href="https://xhenvolt.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">Xhenvolt</a></p>
+          <p>© {new Date().getFullYear()} DRAIS School Management System. All rights reserved.</p>
         </div>
       </div>
     </footer>

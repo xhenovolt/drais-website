@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, Fingerprint, Star, Zap } from "lucide-react";
+import { motion } from "framer-motion";
 import PublicLayout from "@/components/public/PublicLayout";
 
 const plans = [
@@ -16,13 +17,13 @@ const plans = [
       "Fingerprint attendance system",
       "Real-time parent SMS alerts",
       "Student information system",
-      "Up to 500 students",
+      "Up to 1000 students",
       "Daily attendance reports",
       "Basic reporting & dashboards",
       "Email & phone support",
     ],
     cta: "Get Started",
-    ctaHref: "/contact",
+    ctaHref: "https://sims.drais.pro",
   },
   {
     name: "Premium",
@@ -42,7 +43,7 @@ const plans = [
       "Priority support",
     ],
     cta: "Get Started",
-    ctaHref: "/contact",
+    ctaHref: "https://sims.drais.pro",
   },
   {
     name: "Gold",
@@ -62,7 +63,7 @@ const plans = [
       "24/7 dedicated support",
     ],
     cta: "Get Started",
-    ctaHref: "/contact",
+    ctaHref: "https://sims.drais.pro",
   },
 ];
 
@@ -93,18 +94,22 @@ export default function PricingPage() {
   return (
     <PublicLayout>
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-indigo-950 via-blue-900 to-slate-900 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 text-sm font-medium mb-6">
+      <section className="py-24 bg-gradient-to-br from-indigo-950 via-blue-900 to-slate-900 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 text-sm font-medium mb-6">
             <Fingerprint className="w-4 h-4" />
             Simple, transparent pricing
-          </div>
-          <h1 className="text-5xl font-extrabold mb-4">
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-5xl sm:text-6xl font-extrabold mb-5">
             Pricing Built for Schools
-          </h1>
-          <p className="text-xl text-blue-100/80 max-w-xl mx-auto">
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-xl text-blue-100/80 max-w-xl mx-auto">
             Choose the plan that fits your school size. All plans include fingerprint attendance as the core feature.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -112,9 +117,13 @@ export default function PricingPage() {
       <section className="py-20 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-6">
-            {plans.map(({ name, tagline, installFee, annualFee, highlight, badge, features, cta, ctaHref }) => (
-              <div
+            {plans.map(({ name, tagline, installFee, annualFee, highlight, badge, features, cta, ctaHref }, idx) => (
+              <motion.div
                 key={name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
                 className={`rounded-2xl p-8 border relative transition-all duration-200 hover:-translate-y-1 hover:shadow-xl ${
                   highlight
                     ? "bg-indigo-600 border-indigo-500 text-white shadow-xl shadow-indigo-500/20"
@@ -180,7 +189,7 @@ export default function PricingPage() {
                 >
                   {cta}
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -193,18 +202,21 @@ export default function PricingPage() {
       {/* Feature comparison note */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-sm font-semibold mb-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-sm font-semibold mb-6">
             <Zap className="w-4 h-4" />
             All plans include core attendance features
-          </div>
-          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">
+          </motion.div>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">
             Fingerprint Attendance Is Always Included
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg mb-10">
+          </motion.h2>
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-gray-600 dark:text-gray-400 text-lg mb-10">
             Regardless of plan, every DRAIS school gets: biometric attendance, real-time dashboard, parent notifications, and attendance reports. Plans differ in school size, features, and support level.
-          </p>
+          </motion.p>
           <Link
-            href="/contact"
+            href="https://sims.drais.pro"
             className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-colors shadow-lg"
           >
             Get Started <ArrowRight className="w-5 h-5" />
@@ -215,15 +227,17 @@ export default function PricingPage() {
       {/* FAQs */}
       <section className="py-20 bg-white dark:bg-gray-950">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
             Frequently Asked Questions
-          </h2>
+          </motion.h2>
           <div className="space-y-6">
-            {faqs.map(({ q, a }) => (
-              <div key={q} className="border-b border-gray-200 dark:border-gray-800 pb-6">
+            {faqs.map(({ q, a }, idx) => (
+              <motion.div key={q} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="border-b border-gray-200 dark:border-gray-800 pb-6">
                 <h3 className="font-bold text-gray-900 dark:text-white mb-2">{q}</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{a}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -238,7 +252,7 @@ export default function PricingPage() {
           <p className="text-indigo-100 mb-8">
             Contact us and we&apos;ll recommend the best plan for your school.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-gray-50 transition-colors shadow-lg">
+          <Link href="https://sims.drais.pro" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-gray-50 transition-colors shadow-lg">
             Talk to us <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

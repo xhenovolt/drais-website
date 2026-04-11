@@ -35,7 +35,7 @@ export default function AttendanceDemoPage() {
             Watch how DRAIS transforms morning attendance from a 15-minute manual process to a fully automated, 2-second fingerprint scan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/signup" className="flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow-lg transition-all hover:-translate-y-0.5">
+            <Link href="https://sims.drais.pro" className="flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow-lg transition-all hover:-translate-y-0.5">
               Start Free Trial <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/contact" className="flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all hover:-translate-y-0.5">
@@ -93,7 +93,7 @@ export default function AttendanceDemoPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/signup" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">
+              <Link href="https://sims.drais.pro" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">
                 Get Started <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -244,7 +244,7 @@ export default function AttendanceDemoPage() {
             Start your free trial and have fingerprint attendance running in your school within days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/signup" className="px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-gray-50 transition-colors shadow-lg">
+            <Link href="https://sims.drais.pro" className="px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-gray-50 transition-colors shadow-lg">
               Start Free Trial
             </Link>
             <Link href="/contact" className="px-8 py-4 bg-white/15 hover:bg-white/25 text-white font-bold rounded-xl border border-white/30 transition-colors">

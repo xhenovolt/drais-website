@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Mail, Phone, MessageSquare, ArrowRight, CheckCircle2, Fingerprint } from "lucide-react";
+import { motion } from "framer-motion";
 import PublicLayout from "@/components/public/PublicLayout";
 
 export default function ContactPage() {
@@ -25,12 +26,15 @@ export default function ContactPage() {
   return (
     <PublicLayout>
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-indigo-950 via-blue-900 to-slate-900 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-extrabold mb-4">Get in Touch</h1>
-          <p className="text-xl text-blue-100/80">
+      <section className="py-24 bg-gradient-to-br from-indigo-950 via-blue-900 to-slate-900 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
+            className="text-5xl sm:text-6xl font-extrabold mb-5">Get in Touch</motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-xl text-blue-100/80 max-w-2xl mx-auto">
             Have questions about DRAIS? Want a live demo? We&apos;re here to help you set up fingerprint attendance for your school.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -38,7 +42,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact info */}
-            <div>
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-4">Contact Options</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                 We typically respond within 1 business day. For urgent support, please use the phone number or WhatsApp.
@@ -79,14 +83,14 @@ export default function ContactPage() {
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                   You don&apos;t need to contact us first. Create your school account and start the free trial immediately.
                 </p>
-                <Link href="/signup" className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-lg transition-colors">
+                <Link href="https://sims.drais.pro" className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-lg transition-colors">
                   Create School Account <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Form */}
-            <div>
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
               {submitted ? (
                 <div className="flex flex-col items-center justify-center text-center py-16">
                   <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-4">
@@ -189,7 +193,7 @@ export default function ContactPage() {
                   </button>
                 </form>
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

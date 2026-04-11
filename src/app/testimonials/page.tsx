@@ -173,7 +173,7 @@ export default function TestimonialsPage() {
             Start your free trial today — no credit card required.
           </p>
           <Link
-            href="/signup"
+            href="https://sims.drais.pro"
             className="inline-flex items-center gap-2 px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-colors shadow-lg"
           >
             Start Free Trial <ArrowRight className="w-4 h-4" />

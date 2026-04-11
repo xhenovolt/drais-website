@@ -6,12 +6,12 @@ import { Menu, X, Fingerprint, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { label: "Features", href: "/features" },
-  { label: "Attendance Demo", href: "/attendance-demo" },
+  { label: "Attendance", href: "/attendance" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Demo", href: "/demo" },
   { label: "Screenshots", href: "/screenshots" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Documentation", href: "/documentation" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function PublicNavbar() {
@@ -64,13 +64,13 @@ export default function PublicNavbar() {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <Link
-            href="/login"
+            href="https://sims.drais.pro"
             className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
             Sign In
           </Link>
           <Link
-            href="/signup"
+            href="https://sims.drais.pro"
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-sm hover:shadow-indigo-500/30"
           >
             Start Free Trial
@@ -106,14 +106,14 @@ export default function PublicNavbar() {
           ))}
           <div className="pt-2 flex flex-col gap-2">
             <Link
-              href="/login"
+              href="https://sims.drais.pro"
               onClick={() => setMenuOpen(false)}
               className="block text-center px-4 py-2.5 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >
               Sign In
             </Link>
             <Link
-              href="/signup"
+              href="https://sims.drais.pro"
               onClick={() => setMenuOpen(false)}
               className="block text-center px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg transition-colors"
             >

@@ -2,226 +2,282 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Fingerprint, Users, GraduationCap, BookOpen, Bell, BarChart3,
-  MessageSquare, Shield, Cloud, Zap, Clock, Monitor, ArrowRight,
-  CheckCircle2, Database, Smartphone,
+  Fingerprint, Users, GraduationCap, Bell, BarChart3,
+  MessageSquare, Shield, Zap, ArrowRight, CheckCircle2,
+  XCircle, Clock, Monitor, DollarSign, FileText, Eye,
+  Smartphone, Star, BookOpen,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import PublicLayout from "@/components/public/PublicLayout";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number = 0) => ({
+    opacity: 1, y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
+  }),
+};
 
 const features = [
   {
     id: "attendance",
     icon: Fingerprint,
-    title: "Biometric Attendance Monitoring",
+    title: "Attendance Tracking",
     badge: "Flagship Feature",
     badgeColor: "bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300",
-    description:
-      "DRAIS's most powerful module. Fingerprint-based check-in eliminates proxy attendance and provides real-time arrival tracking with automatic parent notifications.",
+    problem: "Manual registers waste 15+ minutes every morning. Students fake attendance. Parents have no idea if their child arrived. Teachers mark carelessly with zero accountability.",
+    solution: "DRAIS connects fingerprint devices at your school entrance directly to a cloud dashboard. Every scan is recorded with an exact timestamp. Late arrivals are auto-detected. Parents get SMS immediately.",
+    benefit: "You gain complete visibility over every student and teacher — in real time. Accountability becomes automatic. Parent trust increases. Reports that used to take hours now take one click.",
     bullets: [
-      "Fingerprint scanner integration (Dahua, ZKTeco, and compatible devices)",
-      "Under 2-second identification per student",
-      "Late arrival detection with configurable thresholds",
+      "Under 2-second fingerprint identification",
+      "Configurable late detection thresholds",
       "Real-time parent SMS on arrival or absence",
-      "Daily, weekly, and monthly attendance reports",
+      "Daily, weekly, and monthly auto-reports",
       "Export to PDF, Excel, or CSV",
+      "Works with Dahua & ZKTeco devices",
     ],
-    screenshotAlt: "Attendance Dashboard Screenshot",
     color: "indigo",
-  },
-  {
-    id: "students",
-    icon: Users,
-    title: "Student Information System",
-    badge: null,
-    description:
-      "Maintain comprehensive student records from admission to graduation. Every detail stored, organised, and accessible.",
-    bullets: [
-      "Student admission with document uploads",
-      "Class and stream assignment",
-      "Guardian/parent information and contacts",
-      "Medical information and special needs",
-      "Enrolment history and transfers",
-      "Student ID and photo management",
-    ],
-    screenshotAlt: "Student Management Screenshot",
-    color: "blue",
+    href: "/attendance",
   },
   {
     id: "exams",
     icon: GraduationCap,
-    title: "Exam Management & Report Cards",
+    title: "Results Management",
     badge: null,
-    description:
-      "Run complete examination cycles — from mark entry to professional report card generation — with automated grading.",
+    problem: "Manual mark entry is error-prone. Calculating grades, positions, and aggregates by hand takes days. Report cards are inconsistent and unprofessional.",
+    solution: "DRAIS provides a complete exam management system — from subject mark entry to automated grade computation, class positions, and professional PDF report cards.",
+    benefit: "Teachers save days of work. Report cards are consistent, professional, and generated in seconds. Academic performance is tracked across terms and years for every student.",
     bullets: [
-      "Subject mark entry by teacher",
-      "Automatic grade computation",
-      "Class position and aggregate scoring",
-      "Professional report card PDF generation",
+      "Subject mark entry by teacher with deadlines",
+      "Automatic grade computation & class ranking",
+      "Professional PDF report card generation",
       "Term and cumulative result tracking",
-      "Deadline management for marks submission",
+      "Customisable grading scales",
+      "Performance comparison across classes",
     ],
-    screenshotAlt: "Exam Results Screenshot",
     color: "purple",
+    href: "/features",
   },
   {
-    id: "classes",
-    icon: BookOpen,
-    title: "Class & Curriculum Management",
+    id: "finance",
+    icon: DollarSign,
+    title: "Fees Tracking",
     badge: null,
-    description:
-      "Organise your school structure from academic years to streams, subjects, and teacher assignments.",
+    problem: "Fee records are scattered across notebooks and spreadsheets. It is impossible to know exactly who has paid, who owes, and how much. Accountability is weak.",
+    solution: "DRAIS tracks every payment against every student. Generate receipts, view balances, send payment reminders, and produce financial reports — all from one dashboard.",
+    benefit: "Finance becomes transparent. You know exactly how much is owed and by whom. Collection rates improve because reminders are automatic. Receipts are digital and permanent.",
     bullets: [
-      "Academic year and term management",
-      "Class and stream creation",
-      "Subject assignment per class",
-      "Teacher-subject linking",
-      "Timetable support",
-      "Promotion and graduation handling",
+      "Fee structure setup per class/term",
+      "Payment recording with receipt generation",
+      "Outstanding balance tracking per student",
+      "Automated SMS payment reminders",
+      "Financial summary reports",
+      "Export for accountant review",
     ],
-    screenshotAlt: "Class Management Screenshot",
     color: "green",
+    href: "/features",
   },
   {
     id: "parents",
-    icon: Bell,
-    title: "Parent Communication",
+    icon: MessageSquare,
+    title: "Communication System",
     badge: null,
-    description:
-      "Keep parents informed at every step — from daily attendance to exam results — through automated and manual notifications.",
+    problem: "Communicating with hundreds of parents is impossible without a system. Important notices get lost. Parents feel disconnected from the school.",
+    solution: "DRAIS sends automated attendance SMS and allows broadcast messages to all parents, specific classes, or individual students. Every message is logged with delivery status.",
+    benefit: "Parents feel connected and informed. Communication is instant and reliable. School reputation improves because parents see professionalism. Delivery tracking ensures nothing is missed.",
     bullets: [
-      "Automated arrival/absence SMS",
-      "Exam result notifications",
+      "Automated arrival/absence SMS notifications",
       "Broadcast announcements to all parents",
-      "Class-specific messages",
-      "Notification history and delivery logs",
-      "Custom message templates",
+      "Class-specific and individual messaging",
+      "Delivery tracking and message logs",
+      "Custom SMS templates",
+      "Works on any phone — no app needed",
     ],
-    screenshotAlt: "Parent Notifications Screenshot",
     color: "orange",
-  },
-  {
-    id: "analytics",
-    icon: BarChart3,
-    title: "Analytics & Reporting",
-    badge: null,
-    description:
-      "Make data-driven decisions with powerful dashboards, attendance trends, and academic performance analytics.",
-    bullets: [
-      "Real-time attendance dashboard",
-      "Attendance trend charts by class/student",
-      "Academic performance comparison",
-      "Late arrival frequency analysis",
-      "Exportable PDF and Excel reports",
-      "Admin summary views",
-    ],
-    screenshotAlt: "Analytics Dashboard Screenshot",
-    color: "cyan",
+    href: "/features",
   },
 ];
 
-const colorMap: Record<string, string> = {
-  indigo: "bg-indigo-50 dark:bg-indigo-900/30 border-indigo-200 dark:border-indigo-800",
-  blue: "bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800",
-  purple: "bg-purple-50 dark:bg-purple-900/30 border-purple-200 dark:border-purple-800",
-  green: "bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800",
-  orange: "bg-orange-50 dark:bg-orange-900/30 border-orange-200 dark:border-orange-800",
-  cyan: "bg-cyan-50 dark:bg-cyan-900/30 border-cyan-200 dark:border-cyan-800",
-};
-
-const iconColorMap: Record<string, string> = {
-  indigo: "text-indigo-600 dark:text-indigo-400",
-  blue: "text-blue-600 dark:text-blue-400",
-  purple: "text-purple-600 dark:text-purple-400",
-  green: "text-green-600 dark:text-green-400",
-  orange: "text-orange-600 dark:text-orange-400",
-  cyan: "text-cyan-600 dark:text-cyan-400",
+const colorMap: Record<string, { card: string; icon: string; badge: string }> = {
+  indigo: {
+    card: "bg-indigo-50 dark:bg-indigo-900/20 border-indigo-200 dark:border-indigo-800",
+    icon: "text-indigo-600 dark:text-indigo-400",
+    badge: "bg-indigo-100 dark:bg-indigo-900/50",
+  },
+  purple: {
+    card: "bg-purple-50 dark:bg-purple-900/20 border-purple-200 dark:border-purple-800",
+    icon: "text-purple-600 dark:text-purple-400",
+    badge: "bg-purple-100 dark:bg-purple-900/50",
+  },
+  green: {
+    card: "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800",
+    icon: "text-green-600 dark:text-green-400",
+    badge: "bg-green-100 dark:bg-green-900/50",
+  },
+  orange: {
+    card: "bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800",
+    icon: "text-orange-600 dark:text-orange-400",
+    badge: "bg-orange-100 dark:bg-orange-900/50",
+  },
 };
 
 export default function FeaturesPage() {
   return (
     <PublicLayout>
-      {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-indigo-950 via-blue-900 to-slate-900 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 text-sm font-medium mb-6">
-            <Fingerprint className="w-4 h-4" />
-            Complete Feature Set
-          </div>
-          <h1 className="text-5xl font-extrabold mb-4">
+      {/* Hero */}
+      <section className="py-24 bg-gradient-to-br from-indigo-950 via-blue-900 to-slate-900 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 text-sm font-medium mb-6">
+            <Zap className="w-4 h-4" /> Complete Feature Set
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
+            className="text-5xl sm:text-6xl font-extrabold mb-5">
             Every Feature Your School Needs
-          </h1>
-          <p className="text-xl text-blue-100/80 max-w-2xl mx-auto mb-8">
-            DRAIS is an attendance-first school management system with a complete suite of modules for modern school operations.
-          </p>
-          <Link
-            href="/signup"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow-xl transition-all hover:-translate-y-0.5"
-          >
-            Start Free Trial <ArrowRight className="w-5 h-5" />
-          </Link>
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-xl text-blue-100/80 max-w-2xl mx-auto mb-8">
+            DRAIS is an attendance-first intelligence system with a complete suite of modules built for schools that demand control, visibility, and automation.
+          </motion.p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
+            <Link href="https://sims.drais.pro" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow-xl transition-all hover:-translate-y-0.5">
+              Request a Demo <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* Feature Sections */}
+      {/* Feature Sections — Problem → Solution → Benefit */}
       <div className="bg-white dark:bg-gray-950">
-        {features.map(({ id, icon: Icon, title, badge, badgeColor, description, bullets, screenshotAlt, color }, idx) => (
-          <section
-            key={id}
-            className={`py-20 ${idx % 2 === 0 ? "bg-white dark:bg-gray-950" : "bg-gray-50 dark:bg-gray-900"}`}
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className={`grid lg:grid-cols-2 gap-12 items-center ${idx % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}>
-                {/* Text */}
-                <div className={idx % 2 !== 0 ? "lg:order-2" : ""}>
-                  {badge && (
-                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${badgeColor}`}>
-                      {badge}
-                    </span>
-                  )}
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${colorMap[color]}`}>
-                    <Icon className={`w-7 h-7 ${iconColorMap[color]}`} />
-                  </div>
-                  <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-4">{title}</h2>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{description}</p>
-                  <ul className="space-y-2.5">
-                    {bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
-                        <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                {/* Screenshot placeholder */}
-                <div className={`${colorMap[color]} rounded-2xl border p-8 flex flex-col items-center justify-center min-h-[280px] text-center ${idx % 2 !== 0 ? "lg:order-1" : ""}`}>
-                  <Icon className={`w-20 h-20 ${iconColorMap[color]} mb-4 opacity-40`} />
-                  <p className="text-sm font-semibold text-gray-600 dark:text-gray-400">[ {screenshotAlt} ]</p>
-                  <p className="text-xs text-gray-400 dark:text-gray-600 mt-1">Placeholder — replace with actual screenshot</p>
+        {features.map(({ id, icon: Icon, title, badge, badgeColor, problem, solution, benefit, bullets, color, href }, idx) => {
+          const colors = colorMap[color];
+          return (
+            <section key={id} id={id} className={`py-24 ${idx % 2 === 0 ? "bg-white dark:bg-gray-950" : "bg-gray-50 dark:bg-gray-900"}`}>
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className={`grid lg:grid-cols-2 gap-16 items-start ${idx % 2 !== 0 ? "" : ""}`}>
+                  {/* Content side */}
+                  <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                    className={idx % 2 !== 0 ? "lg:order-2" : ""}>
+                    {badge && (
+                      <span className={`inline-block text-xs font-bold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wider ${badgeColor}`}>
+                        {badge}
+                      </span>
+                    )}
+                    <div className={`w-16 h-16 rounded-2xl ${colors.card} border flex items-center justify-center mb-5`}>
+                      <Icon className={`w-8 h-8 ${colors.icon}`} />
+                    </div>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-8">{title}</h2>
+
+                    {/* Problem - Solution - Benefit */}
+                    <div className="space-y-6 mb-8">
+                      <div className="bg-red-50 dark:bg-red-900/20 rounded-2xl p-5 border border-red-200 dark:border-red-900/50">
+                        <div className="flex items-center gap-2 mb-2">
+                          <XCircle className="w-5 h-5 text-red-500" />
+                          <h3 className="font-bold text-red-800 dark:text-red-300 text-sm uppercase tracking-wider">The Problem</h3>
+                        </div>
+                        <p className="text-red-700 dark:text-red-300/80 text-sm leading-relaxed">{problem}</p>
+                      </div>
+
+                      <div className="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-5 border border-blue-200 dark:border-blue-900/50">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Zap className="w-5 h-5 text-blue-500" />
+                          <h3 className="font-bold text-blue-800 dark:text-blue-300 text-sm uppercase tracking-wider">The Solution</h3>
+                        </div>
+                        <p className="text-blue-700 dark:text-blue-300/80 text-sm leading-relaxed">{solution}</p>
+                      </div>
+
+                      <div className="bg-green-50 dark:bg-green-900/20 rounded-2xl p-5 border border-green-200 dark:border-green-900/50">
+                        <div className="flex items-center gap-2 mb-2">
+                          <CheckCircle2 className="w-5 h-5 text-green-500" />
+                          <h3 className="font-bold text-green-800 dark:text-green-300 text-sm uppercase tracking-wider">The Benefit</h3>
+                        </div>
+                        <p className="text-green-700 dark:text-green-300/80 text-sm leading-relaxed">{benefit}</p>
+                      </div>
+                    </div>
+
+                    {id === "attendance" && (
+                      <Link href={href} className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-indigo-500/20">
+                        Deep Dive: Attendance System <ArrowRight className="w-5 h-5" />
+                      </Link>
+                    )}
+                  </motion.div>
+
+                  {/* Bullets side */}
+                  <motion.div
+                    initial={{ opacity: 0, x: idx % 2 !== 0 ? -40 : 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className={idx % 2 !== 0 ? "lg:order-1" : ""}
+                  >
+                    <div className={`${colors.card} rounded-3xl border p-8`}>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">What&apos;s Included</h3>
+                      <ul className="space-y-4">
+                        {bullets.map((b) => (
+                          <li key={b} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                            <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
+            </section>
+          );
+        })}
       </div>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-indigo-600 to-blue-700 text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-white mb-4">
-            Ready to Bring DRAIS to Your School?
-          </h2>
-          <p className="text-indigo-100 text-lg mb-8">
-            Start your free trial today and transform how your school tracks attendance.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/signup" className="px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-gray-50 transition-colors shadow-lg">
-              Start Free Trial
-            </Link>
-            <Link href="/contact" className="px-8 py-4 bg-white/15 hover:bg-white/25 text-white font-bold rounded-xl border border-white/30 transition-colors">
-              Book a Demo
-            </Link>
+      {/* Additional features grid */}
+      <section className="py-24 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
+            <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">And So Much More</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+              Every module is designed to save time and increase accountability.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: Users, title: "Student Information System", desc: "Complete student profiles from admission to graduation." },
+              { icon: BookOpen, title: "Class Management", desc: "Academic years, streams, subjects, and teacher assignments." },
+              { icon: BarChart3, title: "Analytics & Dashboards", desc: "Attendance trends, academic performance, and exportable reports." },
+              { icon: Shield, title: "Security & Data Isolation", desc: "Each school's data is completely private. Role-based access control." },
+              { icon: Monitor, title: "Multi-Device Support", desc: "Access from any computer, tablet, or phone." },
+              { icon: FileText, title: "Report Generation", desc: "PDF, Excel, CSV exports for every data point." },
+              { icon: Star, title: "Tahfiz / Quran Programs", desc: "Specialised modules for Islamic education programs." },
+              { icon: Eye, title: "Enterprise Dashboard", desc: "Multi-school analytics for education organisations." },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <div className="w-11 h-11 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center mb-4">
+                  <Icon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{desc}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-gradient-to-br from-indigo-600 via-blue-700 to-indigo-800 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-5">Ready to Transform Your School?</h2>
+            <p className="text-indigo-100 text-lg mb-8">See all these features working together in a live demo tailored to your school.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="https://sims.drais.pro" className="group flex items-center gap-2 px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-lg hover:-translate-y-0.5">
+                Request a Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link href="/attendance" className="px-8 py-4 bg-white/15 hover:bg-white/25 text-white font-bold rounded-xl border border-white/30 transition-all hover:-translate-y-0.5">
+                See Attendance System
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </PublicLayout>
