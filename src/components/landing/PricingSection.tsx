@@ -6,8 +6,8 @@ export const PricingSection = () => {
   const plans = [
     {
       name: 'Professional',
-      setup: '1,000,000',
-      annual: '200,000',
+      setup: '1,300,000',
+      annual: '350,000',
       desc: 'Ideal for small to medium schools getting started with biometric attendance.',
       icon: Sparkles,
       color: 'blue',
@@ -24,7 +24,7 @@ export const PricingSection = () => {
     {
       name: 'Premium',
       setup: '1,800,000',
-      annual: '350,000',
+      annual: '450,000',
       desc: 'Complete school management for growing institutions that need more power.',
       icon: Zap,
       color: 'indigo',
@@ -43,8 +43,8 @@ export const PricingSection = () => {
     },
     {
       name: 'Gold',
-      setup: '2,500,000',
-      annual: '500,000',
+      setup: '2,700,000',
+      annual: '600,000',
       desc: 'Enterprise-grade solution for large schools and multi-campus institutions.',
       icon: Crown,
       color: 'amber',

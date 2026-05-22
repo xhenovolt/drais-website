@@ -9,8 +9,8 @@ const plans = [
   {
     name: "Professional",
     tagline: "Ideal for small to medium schools getting started",
-    installFee: "1,000,000",
-    annualFee: "200,000",
+    installFee: "1,300,000",
+    annualFee: "350,000",
     highlight: false,
     badge: null,
     features: [
@@ -29,7 +29,7 @@ const plans = [
     name: "Premium",
     tagline: "Complete school management for growing institutions",
     installFee: "1,800,000",
-    annualFee: "350,000",
+    annualFee: "450,000",
     highlight: true,
     badge: "Most Popular",
     features: [
@@ -48,8 +48,8 @@ const plans = [
   {
     name: "Gold",
     tagline: "Enterprise-grade for large schools & multi-campus",
-    installFee: "2,500,000",
-    annualFee: "500,000",
+    installFee: "2,700,000",
+    annualFee: "600,000",
     highlight: false,
     badge: null,
     features: [
