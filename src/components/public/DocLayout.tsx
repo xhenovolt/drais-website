@@ -10,26 +10,58 @@ const docNav = [
     section: "Getting Started",
     items: [
       { label: "Introduction", href: "/documentation" },
-      { label: "Getting Started", href: "/documentation/getting-started" },
+      { label: "How DRAIS Works", href: "/documentation/how-drais-works" },
+      { label: "Setting Up Your School", href: "/documentation/getting-started" },
     ],
   },
   {
     section: "Students",
     items: [
       { label: "Admitting a Student", href: "/documentation/admitting-students" },
+      { label: "Managing Learners", href: "/documentation/managing-learners" },
+      { label: "The Parent Portal", href: "/documentation/parent-portal" },
     ],
   },
   {
     section: "Attendance",
     items: [
-      { label: "Taking Attendance", href: "/documentation/attendance" },
+      { label: "How Attendance Works", href: "/documentation/attendance" },
+      { label: "Fingerprint Devices", href: "/documentation/devices" },
+      { label: "Attendance Reports", href: "/documentation/attendance-reports" },
     ],
   },
   {
     section: "Academics",
     items: [
       { label: "Exams & Marks", href: "/documentation/exams" },
-      { label: "Generating Reports", href: "/documentation/reports" },
+      { label: "Report Cards", href: "/documentation/reports" },
+      { label: "Designing Report Cards", href: "/documentation/report-designer" },
+    ],
+  },
+  {
+    section: "Finance",
+    items: [
+      { label: "Fees & Payments", href: "/documentation/fees" },
+    ],
+  },
+  {
+    section: "Communication",
+    items: [
+      { label: "SMS & Notifications", href: "/documentation/notifications" },
+    ],
+  },
+  {
+    section: "Administration",
+    items: [
+      { label: "Users, Roles & Permissions", href: "/documentation/roles-permissions" },
+      { label: "Settings & Modules", href: "/documentation/settings" },
+      { label: "Data Safety & Backups", href: "/documentation/data-safety" },
+    ],
+  },
+  {
+    section: "Help",
+    items: [
+      { label: "Troubleshooting", href: "/documentation/troubleshooting" },
     ],
   },
 ];
